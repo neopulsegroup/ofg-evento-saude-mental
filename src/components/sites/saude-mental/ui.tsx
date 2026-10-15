@@ -12,7 +12,7 @@ export function Pill({ href, children, variant = "primary", type, onClick }: { h
   const cls =
     "group inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-[15px] font-bold transition duration-300 " +
     (variant === "primary"
-      ? "bg-[#FBFF51] text-[#11082B] hover:bg-white"
+      ? "bg-[#008cff] text-white hover:bg-[#004680]"
       : "bg-white/10 text-white backdrop-blur hover:bg-white/20");
   const inner = (
     <>
@@ -27,7 +27,7 @@ export function Pill({ href, children, variant = "primary", type, onClick }: { h
 export function SectionTag({ children }: { children: ReactNode }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="#FBFF51" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z" /></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#008cff" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z" /></svg>
       {children}
     </span>
   );

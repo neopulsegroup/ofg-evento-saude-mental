@@ -7,7 +7,7 @@ import { Pill, SectionTag } from "./ui";
 export function LocalFaq() {
   const [open, setOpen] = useState(0);
   return (
-    <section id="local" className="bg-[#170C29] py-20 text-white lg:py-28">
+    <section id="local" className="bg-[#00355f] py-20 text-white lg:py-28">
       <div className="mx-auto grid max-w-[1240px] gap-14 px-5 lg:grid-cols-2">
         <div>
           <SectionTag>Local e data</SectionTag>
@@ -25,11 +25,11 @@ export function LocalFaq() {
             {FAQ.map((f, i) => {
               const isOpen = open === i;
               return (
-                <div key={f.q} className={`rounded-2xl border transition-colors ${isOpen ? "border-[#FBFF51]/50 bg-white/10" : "border-white/10 bg-white/5"}`}>
+                <div key={f.q} className={`rounded-2xl border transition-colors ${isOpen ? "border-[#008cff]/50 bg-white/10" : "border-white/10 bg-white/5"}`}>
                   <h3>
                     <button type="button" aria-expanded={isOpen} aria-controls={`faq-${i}`} onClick={() => setOpen(isOpen ? -1 : i)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-lg font-bold">
                       {f.q}
-                      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#FBFF51] text-xl leading-none text-[#11082B] transition-transform ${isOpen ? "rotate-45" : ""}`}>+</span>
+                      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#008cff] text-xl leading-none text-white transition-transform ${isOpen ? "rotate-45" : ""}`}>+</span>
                     </button>
                   </h3>
                   <div id={`faq-${i}`} className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>

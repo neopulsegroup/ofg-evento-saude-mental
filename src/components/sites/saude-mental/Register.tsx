@@ -27,14 +27,14 @@ export function Register() {
     if (Object.keys(next).length === 0) setDone(true);
   };
 
-  const input = "w-full rounded-xl border bg-white/5 px-4 py-3.5 text-white placeholder:text-white/50 outline-none transition focus:border-[#FBFF51] ";
+  const input = "w-full rounded-xl border bg-white/5 px-4 py-3.5 text-white placeholder:text-white/50 outline-none transition focus:border-[#008cff] ";
 
   return (
-    <section id="inscricao" className="relative bg-[#11082B] py-20 text-white lg:py-28">
+    <section id="inscricao" className="relative bg-[#00294d] py-20 text-white lg:py-28">
       <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 lg:grid-cols-2">
         <div>
           <SectionTag>Inscrições</SectionTag>
-          <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl lg:text-6xl">Garanta <span className="text-[#FBFF51]">sua vaga</span></h2>
+          <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl lg:text-6xl">Garanta <span className="text-[#008cff]">sua vaga</span></h2>
           <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-white/75">Preencha o formulário e participe deste encontro exclusivo.</p>
           <div className="mt-8 inline-block rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="font-display text-2xl font-bold uppercase">3 de novembro de 2026</p>
@@ -44,7 +44,7 @@ export function Register() {
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">
           {done ? (
             <div role="status" className="py-10 text-center">
-              <p className="font-display text-3xl font-bold uppercase text-[#FBFF51]">Inscrição recebida!</p>
+              <p className="font-display text-3xl font-bold uppercase text-[#008cff]">Inscrição recebida!</p>
               <p className="mt-3 text-white/75">Obrigado pelo interesse. Entraremos em contato pelo e-mail informado.</p>
             </div>
           ) : (
@@ -62,7 +62,7 @@ export function Register() {
                 <input id="f-captcha" name="captcha" inputMode="numeric" placeholder="8 + 3 =" aria-invalid={!!errors.captcha} className={input + (errors.captcha ? "border-red-400" : "border-white/15")} />
                 {errors.captcha && <p className="mt-1 text-sm text-red-300">{errors.captcha}</p>}
               </div>
-              <button type="submit" className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#FBFF51] px-6 py-4 text-base font-bold uppercase tracking-wide text-[#11082B] transition hover:bg-white">
+              <button type="submit" className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#008cff] px-6 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#004680]">
                 Quero participar <Arrow className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
               <p className="text-center text-sm text-white/60">Seus dados estão seguros.</p>

@@ -27,7 +27,7 @@ function Counter({ to }: { to: number }) {
 
 export function Impact() {
   return (
-    <section id="impacto" className="relative overflow-hidden bg-gradient-to-r from-[#FBFF51] to-[#d9ff4a] py-14 text-[#11082B]">
+    <section id="impacto" className="relative overflow-hidden bg-gradient-to-r from-[#004680] to-[#008cff] py-14 text-white">
       <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-5 md:grid-cols-[1fr_1fr_1.4fr]">
         <div>
           <p className="font-display text-7xl font-bold leading-none"><Counter to={125} /></p>
@@ -37,7 +37,7 @@ export function Impact() {
           <p className="font-display text-7xl font-bold leading-none"><Counter to={125} /></p>
           <p className="mt-2 text-xl font-bold">oportunidades <span className="font-medium">de dar o primeiro passo.</span></p>
         </div>
-        <div className="md:border-l md:border-[#11082B]/25 md:pl-10">
+        <div className="md:border-l md:border-white/25 md:pl-10">
           <h2 className="font-display text-3xl font-bold leading-tight">Mais do que um evento, um impacto real.</h2>
           <p className="mt-3 text-base leading-relaxed">
             Para muitas crianças, entrar em uma quadra de tênis é mais do que começar a praticar um esporte. É descobrir novas possibilidades, desenvolver confiança, criar vínculos e construir sonhos.
