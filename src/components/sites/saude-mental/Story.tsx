@@ -11,17 +11,17 @@ export function Story() {
     if (el) el.scrollBy({ left: dir * (el.clientWidth * 0.7), behavior: "smooth" });
   };
   return (
-    <section id="historia" className="bg-[#11082B] py-20 text-white lg:py-28">
+    <section id="historia" className="bg-[#00294d] py-20 text-white lg:py-28">
       <div className="mx-auto max-w-[1240px] px-5">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[760px]">
             <SectionTag>História de impacto</SectionTag>
             <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl">Mais que um projeto, uma transformação.</h2>
-            <p className="mt-5 text-lg font-semibold text-[#FBFF51]">125 crianças, 125 oportunidades de dar o primeiro passo.</p>
+            <p className="mt-5 text-lg font-semibold text-[#008cff]">125 crianças, 125 oportunidades de dar o primeiro passo.</p>
           </div>
           <div className="flex gap-3">
-            <button type="button" aria-label="Anterior" onClick={() => scrollBy(-1)} className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-[#FBFF51] hover:text-[#11082B]">←</button>
-            <button type="button" aria-label="Próximo" onClick={() => scrollBy(1)} className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-[#FBFF51] hover:text-[#11082B]">→</button>
+            <button type="button" aria-label="Anterior" onClick={() => scrollBy(-1)} className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-[#008cff] hover:text-white">←</button>
+            <button type="button" aria-label="Próximo" onClick={() => scrollBy(1)} className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-xl transition hover:bg-[#008cff] hover:text-white">→</button>
           </div>
         </div>
 
@@ -30,7 +30,7 @@ export function Story() {
             <figure key={g.src} className="relative h-[420px] w-[78%] shrink-0 snap-start overflow-hidden rounded-3xl sm:w-[44%] lg:w-[32%]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={g.src} alt={g.alt} loading="lazy" className="h-full w-full object-cover transition duration-500 hover:scale-105" />
-              <figcaption className="absolute bottom-4 left-4 rounded-full bg-[#11082B]/80 px-3 py-1 text-sm font-bold backdrop-blur">
+              <figcaption className="absolute bottom-4 left-4 rounded-full bg-[#00294d]/80 px-3 py-1 text-sm font-bold backdrop-blur">
                 {String(i + 1).padStart(2, "0")} <span className="text-white/50">/ {String(GALLERY.length).padStart(2, "0")}</span>
               </figcaption>
             </figure>
@@ -43,7 +43,7 @@ export function Story() {
             <p>Há quase 40 anos, o projeto <strong className="text-white">Um Saque para a Vida</strong> transforma a realidade de crianças e adolescentes de comunidades do Recife por meio do esporte.</p>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
-            <h3 className="font-display text-2xl font-bold uppercase text-[#FBFF51]">É aqui que você entra.</h3>
+            <h3 className="font-display text-2xl font-bold uppercase text-[#008cff]">É aqui que você entra.</h3>
             <p className="mt-3 text-lg leading-relaxed text-white/80">
               Ao participar do evento, você poderá adquirir um Passe de Ouro e transformar o valor da sua contribuição em um par de tênis para uma criança que sonha em entrar em quadra.
             </p>
