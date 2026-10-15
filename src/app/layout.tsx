@@ -1,33 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const display = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"] });
+const sans = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Encontro de Líderes e Gestores em Recife | 3 de novembro de 2026 | OFG",
+  description:
+    "Encontro exclusivo para líderes e gestores sobre saúde mental, NR-1 e gestão de pessoas. 3 de novembro de 2026, Ponteio, Recife.",
+  icons: { icon: "/sites/saude-mental/favicon.svg" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="pt-BR" className={`${display.variable} ${sans.variable} h-full scroll-smooth antialiased`}>
+      <body className="min-h-full bg-[#11082B] font-[family-name:var(--font-figtree)]">{children}</body>
     </html>
   );
 }

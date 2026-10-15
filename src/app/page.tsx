@@ -1,9 +1,25 @@
+import { About } from "@/components/sites/saude-mental/About";
+import { Footer } from "@/components/sites/saude-mental/Footer";
+import { Header } from "@/components/sites/saude-mental/Header";
+import { Hero } from "@/components/sites/saude-mental/Hero";
+import { Impact } from "@/components/sites/saude-mental/Impact";
+import { LocalFaq } from "@/components/sites/saude-mental/LocalFaq";
+import { Register } from "@/components/sites/saude-mental/Register";
+import { Story } from "@/components/sites/saude-mental/Story";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-muted-foreground">
-        Clone target not yet built. Run <code className="font-mono text-foreground">/clone-website</code> to start.
-      </p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Impact />
+        <Story />
+        <Register />
+        <LocalFaq />
+      </main>
+      <Footer />
+    </>
   );
 }
