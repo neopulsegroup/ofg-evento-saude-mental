@@ -9,6 +9,7 @@ export const EVENT = {
   mode: "Presencial",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Hub+Plural+Espinheiro+Av.+Gov.+Agamenon+Magalh%C3%A3es+2939+Recife",
   mapsEmbed: "https://www.google.com/maps?q=Hub+Plural+Espinheiro+Av.+Gov.+Agamenon+Magalh%C3%A3es+2939+Recife+PE&output=embed&hl=pt-BR",
+  appUrl: "https://app-ofg-evento.vercel.app/",
   siteUrl: "https://eventorecife.oportoforte.com/",
 };
 

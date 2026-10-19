@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { Toast } from "./Toast";
 import { Arrow, SectionTag } from "./ui";
 
 const FIELDS = [
@@ -13,9 +14,12 @@ const FIELDS = [
 
 export function Register() {
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState<null | { already: boolean }>(null);
+  const [sending, setSending] = useState(false);
+  const [serverError, setServerError] = useState("");
+  const [toastOpen, setToastOpen] = useState(false);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const next: Record<string, string> = {};
@@ -24,7 +28,25 @@ export function Register() {
     if (email && !/^\S+@\S+\.\S+$/.test(email)) next.email = "E-mail inválido";
     if (String(data.get("captcha") ?? "").trim() !== "11") next.captcha = "Resposta incorreta";
     setErrors(next);
-    if (Object.keys(next).length === 0) setDone(true);
+    if (Object.keys(next).length > 0) return;
+
+    setSending(true);
+    setServerError("");
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(data)),
+      });
+      const json = (await res.json().catch(() => ({}))) as { error?: string; alreadyRegistered?: boolean };
+      if (!res.ok) throw new Error(json.error ?? "Não foi possível concluir a inscrição.");
+      setDone({ already: !!json.alreadyRegistered });
+      setToastOpen(true);
+    } catch (err) {
+      setServerError(err instanceof Error ? err.message : "Não foi possível concluir a inscrição.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const input = "w-full rounded-xl border bg-white/5 px-4 py-3.5 text-white placeholder:text-white/50 outline-none transition focus:border-[#008cff] ";
@@ -44,12 +66,18 @@ export function Register() {
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">
           {done ? (
             <div role="status" className="py-10 text-center">
-              <p className="font-display text-3xl font-bold uppercase text-[#008cff]">Inscrição recebida!</p>
-              <p className="mt-3 text-white/75">Obrigado pelo interesse. Entraremos em contato pelo e-mail informado.</p>
+              <p className="font-display text-3xl font-bold uppercase text-[#008cff]">
+                {done.already ? "Você já está inscrito!" : "Inscrição confirmada!"}
+              </p>
+              <p className="mt-3 text-white/75">
+                Para acessar o app do evento, entre com o e-mail cadastrado: use o login com Google ou crie sua senha em &quot;Esqueci minha senha&quot;.
+              </p>
+
             </div>
           ) : (
             <form noValidate onSubmit={onSubmit} className="space-y-4" aria-labelledby="form-title">
               <h3 id="form-title" className="sr-only">Formulário de inscrição</h3>
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               {FIELDS.map((f) => (
                 <div key={f.name}>
                   <label htmlFor={`f-${f.name}`} className="sr-only">{f.label}</label>
@@ -62,14 +90,22 @@ export function Register() {
                 <input id="f-captcha" name="captcha" inputMode="numeric" placeholder="8 + 3 =" aria-invalid={!!errors.captcha} className={input + (errors.captcha ? "border-red-400" : "border-white/15")} />
                 {errors.captcha && <p className="mt-1 text-sm text-red-300">{errors.captcha}</p>}
               </div>
-              <button type="submit" className="group flex w-full items-center justify-center gap-2 rounded-xl bg-[#008cff] px-6 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#004680]">
-                Quero participar <Arrow className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {serverError && <p role="alert" className="text-center text-sm text-red-300">{serverError}</p>}
+              <button type="submit" disabled={sending} className="group flex w-full disabled:opacity-60 items-center justify-center gap-2 rounded-xl bg-[#008cff] px-6 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#004680]">
+                {sending ? "Enviando..." : "Quero participar"} <Arrow className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
               <p className="text-center text-sm text-white/60">Seus dados estão seguros.</p>
             </form>
           )}
         </div>
       </div>
+      {toastOpen && (
+        <Toast
+          title={done?.already ? "Você já está inscrito!" : "Inscrição confirmada!"}
+          description="Acesse o app do evento com o e-mail cadastrado."
+          onClose={() => setToastOpen(false)}
+        />
+      )}
     </section>
   );
 }
