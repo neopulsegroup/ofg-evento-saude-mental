@@ -22,10 +22,12 @@ export function Hero() {
           </div>
           <a href="#local" className="mt-12 flex max-w-[560px] items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/10 p-6 backdrop-blur-md transition hover:bg-white/15">
             <div>
-              <h2 className="font-display text-2xl font-bold uppercase sm:text-4xl">{EVENT.dateLong}</h2>
-              <p className="mt-2 flex items-center gap-2 text-sm text-white/80 sm:text-base">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008cff" strokeWidth="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
-                {EVENT.time} · {EVENT.venue} · {EVENT.mode} · {EVENT.weekday}
+              <h2 className="font-display text-2xl font-bold uppercase sm:text-4xl">
+                {EVENT.dateLong} <span className="text-[#008cff]">· {EVENT.time}</span>
+              </h2>
+              <p className="mt-3 flex items-start gap-2 text-sm text-white/80 sm:text-base">
+                <svg className="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#008cff" strokeWidth="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                <span>{EVENT.venue}, Recife · {EVENT.mode}<br />Av. Gov. Agamenon Magalhães, 2939 - Recife</span>
               </p>
             </div>
             <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#008cff] text-white">
