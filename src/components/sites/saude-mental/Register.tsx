@@ -38,7 +38,7 @@ export function Register() {
           <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-white/75">Preencha o formulário e participe deste encontro exclusivo.</p>
           <div className="mt-8 inline-block rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="font-display text-2xl font-bold uppercase">3 de novembro de 2026</p>
-            <p className="mt-1 text-white/70">Ponteio, Recife · Presencial</p>
+            <p className="mt-1 text-white/70">Hub Plural Espinheiro, Recife · Presencial</p>
           </div>
         </div>
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur sm:p-8">

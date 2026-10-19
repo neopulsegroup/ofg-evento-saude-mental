@@ -12,10 +12,10 @@ export function LocalFaq() {
         <div>
           <SectionTag>Local e data</SectionTag>
           <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl">{EVENT.venue}</h2>
-          <p className="mt-4 text-lg text-white/80"><b className="text-white">Ponteio, Recife (PE)</b><br /><time dateTime="2026-11-03">{EVENT.dateLong}</time>, terça-feira · {EVENT.mode}</p>
+          <p className="mt-4 text-lg text-white/80"><b className="text-white">Hub Plural Espinheiro</b><br />{EVENT.address}<br /><time dateTime="2026-11-03">{EVENT.dateLong}</time>, terça-feira · {EVENT.mode}</p>
           <div className="mt-6"><Pill href={EVENT.mapsUrl}>Ver no mapa</Pill></div>
           <div className="mt-8 overflow-hidden rounded-3xl border border-white/10">
-            <iframe title="Mapa: Ponteio, Recife (PE)" src={EVENT.mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen className="h-[340px] w-full border-0" />
+            <iframe title="Mapa: Hub Plural Espinheiro, Recife (PE)" src={EVENT.mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen className="h-[340px] w-full border-0" />
           </div>
         </div>
         <div>
