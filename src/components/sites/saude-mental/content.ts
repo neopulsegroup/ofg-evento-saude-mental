@@ -2,10 +2,12 @@ export const EVENT = {
   name: "Encontro de Líderes e Gestores",
   dateLong: "3 de novembro de 2026",
   weekday: "Terça-feira",
-  venue: "Ponteio, Recife",
+  venue: "Hub Plural Espinheiro",
+  address: "Av. Gov. Agamenon Magalhães, 2939 - Espinheiro, Recife - PE, 52021-170",
+  city: "Recife",
   mode: "Presencial",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Ponteio+Recife",
-  mapsEmbed: "https://www.google.com/maps?q=Ponteio%2C+Recife%2C+PE&output=embed&hl=pt-BR",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Hub+Plural+Espinheiro+Av.+Gov.+Agamenon+Magalh%C3%A3es+2939+Recife",
+  mapsEmbed: "https://www.google.com/maps?q=Hub+Plural+Espinheiro+Av.+Gov.+Agamenon+Magalh%C3%A3es+2939+Recife+PE&output=embed&hl=pt-BR",
   siteUrl: "https://eventorecife.oportoforte.com/",
 };
 
@@ -29,7 +31,7 @@ export const TOPICS = [
 export const FAQ = [
   {
     q: "Quando e onde acontece o encontro?",
-    a: "No dia 3 de novembro de 2026 (terça-feira), no Ponteio, em Recife, de forma presencial.",
+    a: "No dia 3 de novembro de 2026 (terça-feira), no Hub Plural Espinheiro, em Recife, de forma presencial.",
   },
   {
     q: "Para quem é o evento?",

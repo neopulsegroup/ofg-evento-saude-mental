@@ -8,7 +8,7 @@ const sans = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Encontro de Líderes e Gestores em Recife | 3 de novembro de 2026 | OFG",
   description:
-    "Encontro exclusivo para líderes e gestores sobre saúde mental, NR-1 e gestão de pessoas. 3 de novembro de 2026, Ponteio, Recife.",
+    "Encontro exclusivo para líderes e gestores sobre saúde mental, NR-1 e gestão de pessoas. 3 de novembro de 2026, Hub Plural Espinheiro, Recife.",
   icons: { icon: "/sites/saude-mental/favicon.svg" },
 };
 
