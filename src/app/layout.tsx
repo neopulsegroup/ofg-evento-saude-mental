@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Figtree } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const display = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"] });
 const sans = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "UA-228586176-1";
 
 export const metadata: Metadata = {
   title: "Encontro de Líderes e Gestores em Recife | 3 de novembro de 2026 | OFG",
@@ -15,7 +18,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${display.variable} ${sans.variable} h-full scroll-smooth antialiased`}>
-      <body className="min-h-full bg-[#00294d] font-[family-name:var(--font-figtree)]">{children}</body>
+      <body className="min-h-full bg-[#00294d] font-[family-name:var(--font-figtree)]">{children}
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
+      </body>
     </html>
   );
 }

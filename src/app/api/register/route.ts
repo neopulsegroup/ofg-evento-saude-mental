@@ -10,6 +10,32 @@ function clean(value: unknown): string {
   return typeof value === "string" ? value.trim().slice(0, MAX_LEN) : "";
 }
 
+async function sendToRdStation(lead: { name: string; email: string; phone: string; company: string; role: string }) {
+  const apiKey = process.env.RD_API_KEY;
+  if (!apiKey) return;
+  try {
+    const res = await fetch(`https://api.rd.services/platform/conversions?api_key=${encodeURIComponent(apiKey)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_type: "CONVERSION",
+        event_family: "CDP",
+        payload: {
+          conversion_identifier: process.env.RD_CONVERSION_ID ?? "formulario-evento-saude-mental-03-11-2026",
+          email: lead.email,
+          name: lead.name,
+          personal_phone: lead.phone,
+          company_name: lead.company,
+          job_title: lead.role,
+        },
+      }),
+    });
+    if (!res.ok) console.error("rd station failed", res.status, await res.text());
+  } catch (err) {
+    console.error("rd station failed", err instanceof Error ? err.message : err);
+  }
+}
+
 export async function POST(request: Request) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -45,6 +71,7 @@ export async function POST(request: Request) {
     );
     if (!existing.ok) throw new Error(`lookup ${existing.status}`);
     if ((await existing.json()).length > 0) {
+      await sendToRdStation({ name, email, phone, company, role });
       return NextResponse.json({ ok: true, alreadyRegistered: true });
     }
 
@@ -59,5 +86,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Não foi possível concluir a inscrição. Tente novamente." }, { status: 502 });
   }
 
+  await sendToRdStation({ name, email, phone, company, role });
   return NextResponse.json({ ok: true });
 }
