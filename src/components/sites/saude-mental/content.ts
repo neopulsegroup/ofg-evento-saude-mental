@@ -2,7 +2,7 @@ export const EVENT = {
   name: "Encontro de Líderes e Gestores",
   dateLong: "3 de novembro de 2026",
   weekday: "Terça-feira",
-  time: "15h30",
+  time: "16h00",
   venue: "Hub Plural Espinheiro",
   address: "Av. Gov. Agamenon Magalhães, 2939 - Espinheiro, Recife - PE, 52021-170",
   city: "Recife",
@@ -33,7 +33,7 @@ export const TOPICS = [
 export const FAQ = [
   {
     q: "Quando e onde acontece o encontro?",
-    a: "No dia 3 de novembro de 2026 (terça-feira), às 15h30, no Hub Plural Espinheiro, em Recife, de forma presencial.",
+    a: "No dia 3 de novembro de 2026 (terça-feira), às 16h00, no Hub Plural Espinheiro, em Recife, de forma presencial.",
   },
   {
     q: "Para quem é o evento?",

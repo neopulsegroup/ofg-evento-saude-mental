@@ -15,7 +15,7 @@ export function About() {
           <div>
             <SectionTag>Sobre o evento</SectionTag>
             <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl lg:text-[56px]">Pessoas movem negócios.</h2>
-            <p className="mt-3 font-semibold text-[#008cff]">3 de novembro de 2026 | 15h30 | Hub Plural Espinheiro, Recife</p>
+            <p className="mt-3 font-semibold text-[#008cff]">3 de novembro de 2026 | 16h00 | Hub Plural Espinheiro, Recife</p>
             <p className="mt-6 text-lg leading-relaxed text-white/75">
               No dia 3 de novembro, vamos reunir profissionais e decisores para conversar sobre saúde mental, riscos psicossociais, NR-1 e os desafios da gestão de pessoas para 2027, a partir de experiências do Brasil e da Europa.
             </p>
