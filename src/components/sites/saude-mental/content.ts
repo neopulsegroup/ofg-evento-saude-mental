@@ -9,6 +9,8 @@ export const EVENT = {
   mode: "Presencial",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Hub+Plural+Espinheiro+Av.+Gov.+Agamenon+Magalh%C3%A3es+2939+Recife",
   mapsEmbed: "https://www.google.com/maps?q=Hub+Plural+Espinheiro+Av.+Gov.+Agamenon+Magalh%C3%A3es+2939+Recife+PE&output=embed&hl=pt-BR",
+  donateUrl: "https://paybox.doare.org/paybox?payboxId=a45e83eb-1c7d-4f0b-9e6d-4238013170b1",
+  ongUrl: "https://www.umsaqueparavida.ong.br/",
   appUrl: "https://app-ofg-evento.vercel.app/",
   siteUrl: "https://eventorecife.oportoforte.com/",
 };

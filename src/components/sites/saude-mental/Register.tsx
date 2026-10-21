@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { EVENT } from "./content";
 import { Toast } from "./Toast";
 import { Arrow, SectionTag } from "./ui";
 
@@ -57,7 +58,14 @@ export function Register() {
         <div>
           <SectionTag>Inscrições</SectionTag>
           <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl lg:text-6xl">Garanta <span className="text-[#008cff]">sua vaga</span></h2>
-          <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-white/75">Preencha o formulário e participe deste encontro exclusivo.</p>
+          <p className="mt-5 max-w-[480px] text-lg leading-relaxed text-white/75">Preencha o formulário e participe deste encontro exclusivo. <strong className="text-white">Vagas limitadas.</strong></p>
+          <div className="mt-6 max-w-[480px] rounded-2xl border border-[#008cff]/40 bg-[#008cff]/10 p-5">
+            <p className="font-display text-xl font-bold uppercase text-[#008cff]">Inscrição gratuita</p>
+            <p className="mt-2 leading-relaxed text-white/80">
+              Você não paga para participar. Pedimos apenas um gesto de generosidade: uma doação de qualquer valor ao projeto <strong className="text-white">Um Saque para a Vida</strong>, que transforma a vida de crianças do Recife pelo esporte. Você pode doar no ato da inscrição ou no dia do evento.
+            </p>
+            <a href={EVENT.donateUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-bold text-white underline underline-offset-4 hover:text-[#008cff]">Quero doar agora</a>
+          </div>
           <div className="mt-8 inline-block rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="font-display text-2xl font-bold uppercase">3 de novembro de 2026</p>
             <p className="mt-1 text-white/70">16h00 · Hub Plural Espinheiro, Recife · Presencial</p>
@@ -94,6 +102,7 @@ export function Register() {
               <button type="submit" disabled={sending} className="group flex w-full disabled:opacity-60 items-center justify-center gap-2 rounded-xl bg-[#008cff] px-6 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#004680]">
                 {sending ? "Enviando..." : "Quero participar"} <Arrow className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
+              <p className="text-center text-sm text-white/70">Inscrição gratuita. Vagas limitadas. Doe ao projeto Um Saque para a Vida no ato da inscrição ou no dia do evento: <a href={EVENT.donateUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline underline-offset-4">doar online agora</a>.</p>
               <p className="text-center text-sm text-white/60">Seus dados estão seguros.</p>
             </form>
           )}

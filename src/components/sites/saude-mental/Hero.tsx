@@ -8,13 +8,14 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#00294d] via-[#00294d]/75 to-[#00294d]/20" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-[#00294d] to-transparent" />
       <div className="mx-auto w-full max-w-[1240px] px-5">
-        <div className="max-w-[720px]">
+        <div>
           <p className="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-[#008cff]">{EVENT.name}</p>
-          <h1 className="font-display text-[44px] font-bold uppercase leading-[1.02] sm:text-6xl lg:text-[76px]">
-            O futuro começa com um <span className="text-[#008cff]">“primeiro passo”</span>
+          <h1 className="font-display text-[34px] font-bold uppercase leading-[1.08] sm:text-5xl lg:text-[56px]">
+            Grande Encontro de Gestores e Líderes de RH e Gestão de Pessoas
+            <span className="mt-3 block text-[#008cff]">Saúde Mental nas Empresas</span>
           </h1>
           <p className="mt-6 max-w-[560px] text-lg leading-relaxed text-white/80">
-            Um encontro exclusivo para líderes e gestores que acreditam que o futuro das empresas começa nas pessoas.
+            O que 2026 ensinou e como se preparar para 2027
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Pill href="#inscricao">Garanta sua vaga</Pill>
