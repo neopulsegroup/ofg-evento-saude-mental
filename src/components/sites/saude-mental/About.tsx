@@ -30,8 +30,8 @@ export function About() {
       <section id="temas" className="bg-[#00294d] pb-20 text-white lg:pb-28">
         <div className="mx-auto max-w-[1240px] px-5">
           <div className="max-w-[760px]">
-            <SectionTag>Programação</SectionTag>
-            <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl">Vamos conversar sobre</h2>
+            <SectionTag>Temas do encontro</SectionTag>
+            <h2 className="mt-5 font-display text-4xl font-bold uppercase leading-[1.08] sm:text-5xl">Programação do evento</h2>
           </div>
           <ol className="mt-12 border-t border-white/15">
             {TOPICS.map((t, i) => (

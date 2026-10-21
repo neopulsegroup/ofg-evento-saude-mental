@@ -1,4 +1,5 @@
 import { About } from "@/components/sites/saude-mental/About";
+import { Donation } from "@/components/sites/saude-mental/Donation";
 import { Footer } from "@/components/sites/saude-mental/Footer";
 import { Header } from "@/components/sites/saude-mental/Header";
 import { Hero } from "@/components/sites/saude-mental/Hero";
@@ -16,6 +17,7 @@ export default function Home() {
         <About />
         <Impact />
         <Story />
+        <Donation />
         <Register />
         <LocalFaq />
       </main>
