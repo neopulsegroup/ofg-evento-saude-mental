@@ -40,7 +40,7 @@ export function Impact() {
         <div className="md:border-l md:border-white/25 md:pl-10">
           <h2 className="font-display text-3xl font-bold leading-tight">Mais do que um evento, um impacto real.</h2>
           <p className="mt-3 text-base leading-relaxed">
-            Para muitas crianças, entrar em uma quadra de tênis é mais do que começar a praticar um esporte. É descobrir novas possibilidades, desenvolver confiança, criar vínculos e construir sonhos.
+            Aqui, o encontro entre líderes se conecta ao esporte: a sua participação pode ajudar crianças de comunidades do Recife a darem o primeiro passo.
           </p>
           <a href="#historia" className="mt-4 inline-block font-bold underline underline-offset-4">Conheça o projeto</a>
         </div>
