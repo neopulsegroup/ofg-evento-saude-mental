@@ -28,6 +28,7 @@ export function Register() {
     const email = String(data.get("email") ?? "");
     if (email && !/^\S+@\S+\.\S+$/.test(email)) next.email = "E-mail inválido";
     if (String(data.get("captcha") ?? "").trim() !== "11") next.captcha = "Resposta incorreta";
+    if (!data.get("consentimento")) next.consentimento = "É necessário autorizar para concluir a inscrição";
     setErrors(next);
     if (Object.keys(next).length > 0) return;
 
@@ -98,12 +99,21 @@ export function Register() {
                 <input id="f-captcha" name="captcha" inputMode="numeric" placeholder="8 + 3 =" aria-invalid={!!errors.captcha} className={input + (errors.captcha ? "border-red-400" : "border-white/15")} />
                 {errors.captcha && <p className="mt-1 text-sm text-red-300">{errors.captcha}</p>}
               </div>
+              <div>
+                <label className="flex items-start gap-3 text-sm leading-relaxed text-white/75">
+                  <input type="checkbox" name="consentimento" aria-invalid={!!errors.consentimento} className="mt-1 h-4 w-4 shrink-0 accent-[#008cff]" />
+                  <span>
+                    Autorizo o uso da minha imagem (fotos e vídeos) captada durante o evento para fins de divulgação institucional do Oporto Forte Group e do projeto Um Saque para a Vida, e o tratamento dos meus dados pessoais para organização do evento e comunicações relacionadas, nos termos da Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
+                  </span>
+                </label>
+                {errors.consentimento && <p className="mt-1 text-sm text-red-300">{errors.consentimento}</p>}
+              </div>
               {serverError && <p role="alert" className="text-center text-sm text-red-300">{serverError}</p>}
               <button type="submit" disabled={sending} className="group flex w-full disabled:opacity-60 items-center justify-center gap-2 rounded-xl bg-[#008cff] px-6 py-4 text-base font-bold uppercase tracking-wide text-white transition hover:bg-[#004680]">
                 {sending ? "Enviando..." : "Quero participar"} <Arrow className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
               <p className="text-center text-sm text-white/70">Inscrição gratuita. Vagas limitadas. Doe ao projeto Um Saque para a Vida no ato da inscrição ou no dia do evento: <a href={EVENT.donateUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-white underline underline-offset-4">doar online agora</a>.</p>
-              <p className="text-center text-sm text-white/60">Seus dados estão seguros.</p>
+              <p className="text-center text-sm text-white/60">Seus dados estão seguros. Você pode solicitar a correção ou a exclusão deles a qualquer momento.</p>
             </form>
           )}
         </div>
